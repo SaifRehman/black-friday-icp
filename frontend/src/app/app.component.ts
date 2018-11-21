@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
+  public list: any = null;
+  constructor(){
+    this.list = null;
+  }
+  
   title = 'app works!';
 }
