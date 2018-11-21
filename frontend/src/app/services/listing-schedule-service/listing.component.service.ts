@@ -3,12 +3,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import { error } from 'util';
-import { Provider } from '../../provider/provider';
 import 'rxjs/Rx';
 
 @Injectable()
 export class ListingService {
-    public constructor(public http: Http, public provider:Provider) {
+    public constructor(public http: Http) {
     }
 
     public listFlights(Year,Month,DayOfMonth,Origin,Dest): Observable<any> {
@@ -17,7 +16,7 @@ export class ListingService {
                 'Content-Type': 'application/json'
             })
         });
-        const link = this.provider.apiUrl.listFlights
+        const link = ""
         const bodyObject = {
             Year:Year,
             Month:Month,
@@ -40,7 +39,7 @@ export class ListingService {
                 'Content-Type': 'application/json'
             })
         });
-        const link = this.provider.apiUrl.listFlightsByID+'/'+String(ID)
+        const link = ""+'/'+String(ID)
         return this.http.get(link, options) // ...using post request
             .map((res: Response) => res.json())
             .catch((error: any) => {
