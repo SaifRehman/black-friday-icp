@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-database
+  namespace: default
+data:
+  MONGOPORT: '27017'
