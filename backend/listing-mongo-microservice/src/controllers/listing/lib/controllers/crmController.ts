@@ -1,12 +1,12 @@
 import * as mongoose from "mongoose";
-import { FlightSchema } from "../models/crmModel";
+import { ItemSchema } from "../models/crmModel";
 import { Request, Response } from "express";
 
-const Flight = mongoose.model("Flight", FlightSchema);
-export class FlightController {
-  public addNewFlight(req: Request, res: Response) {
+const Item = mongoose.model("Flight", ItemSchema);
+export class ItemController {
+  public addNewItem(req: Request, res: Response) {
     res.setHeader('Content-Type', 'application/json');
-    let newFlight = new Flight(req.body);
+    let newFlight = new Item(req.body);
     newFlight.save((err, flight) => {
       if (err) {
         res.status(404).json({ err });
@@ -15,9 +15,9 @@ export class FlightController {
       res.json(flight);
     });
   }
-  public getFlights(req: Request, res: Response) {
+  public getItem(req: Request, res: Response) {
     res.setHeader('Content-Type', 'application/json');
-    Flight.find({}, (err, flight) => {
+    Item.find({}, (err, flight) => {
       if (err) {
         res.status(404).json({ err });
         return;
@@ -26,9 +26,9 @@ export class FlightController {
       }
     });
   }
-  public getFlightById(req: Request, res: Response) {
+  public getItemById(req: Request, res: Response) {
     res.setHeader('Content-Type', 'application/json');
-    Flight.findById(req.params.ID, (err, flight) => {
+    Item.findById(req.params.ID, (err, flight) => {
       if (err) {
         res.status(404).json({ err });
         return;      } else {
@@ -36,9 +36,9 @@ export class FlightController {
       }
     });
   }
-  public updateFlight(req: Request, res: Response) {
+  public updateItem(req: Request, res: Response) {
     res.setHeader('Content-Type', 'application/json');
-    Flight.findOneAndUpdate(
+    Item.findOneAndUpdate(
       { _id: req.params.ID }, req.body, { new: true },(err, flight) => {
         if (err) {
             res.status(404).json({ err });
@@ -48,9 +48,9 @@ export class FlightController {
     );
   }
 
-  public deleteFlight (req: Request, res: Response) {   
+  public deleteItem (req: Request, res: Response) {   
     res.setHeader('Content-Type', 'application/json');        
-    Flight.deleteOne({ _id: req.params.ID }, (err) => {
+    Item.deleteOne({ _id: req.params.ID }, (err) => {
         if(err){
             res.status(404).json({ err });
             return;
