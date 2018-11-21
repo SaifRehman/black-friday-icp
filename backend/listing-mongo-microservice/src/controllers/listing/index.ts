@@ -1,11 +1,11 @@
 import { Router } from "express";
 import { Request, Response, NextFunction } from "express";
-import { FlightController } from "../listing/lib/controllers/crmController";
+import { ItemController } from "../listing/lib/controllers/crmController";
 
 import "reflect-metadata";
 import { runInNewContext } from "vm";
 class ListingMongoController {
-  public flightController: FlightController = new FlightController();
+  public itemController: ItemController = new ItemController();
   public router: Router;
 
   constructor() {
@@ -19,43 +19,43 @@ class ListingMongoController {
     });
 
     this.router.get(
-      "/listFlights",
+      "/listItems",
       (req: Request, res: Response, next: NextFunction) => {
         next();
       },
-      this.flightController.getFlights
+      this.itemController.getItem
     );
 
     this.router.post(
-      "/listFlights",
+      "/listItems",
       (req: Request, res: Response, next: NextFunction) => {
         next();
       },
-      this.flightController.addNewFlight
+      this.itemController.addNewItem
     );
 
     this.router.get(
-      "/listFlights/:ID",
+      "/listItems/:ID",
       (_, res: Response, next: NextFunction) => {
         next();
       },
-      this.flightController.getFlightById
+      this.itemController.getItemById
     );
 
     this.router.put(
-      "/listFlights/:ID",
+      "/listItems/:ID",
       (_, res: Response, next: NextFunction) => {
         next();
       },
-      this.flightController.updateFlight
+      this.itemController.updateItem
     );
 
     this.router.delete(
-      "/listFlights/:ID",
+      "/listItems/:ID",
       (_, res: Response, next: NextFunction) => {
         next();
       },
-      this.flightController.deleteFlight
+      this.itemController.deleteItem
     );
   }
 }
