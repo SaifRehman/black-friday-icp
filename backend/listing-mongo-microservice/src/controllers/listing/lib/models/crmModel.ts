@@ -8,6 +8,6 @@ export const ItemSchema = new Schema({
         type: String
     },
     Price: {
-        type: Number 
+        type: String 
     }
 });
