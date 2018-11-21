@@ -1,9 +1,7 @@
 import { Router } from "express";
 import { Request, Response, NextFunction } from "express";
 import { ItemController } from "../listing/lib/controllers/crmController";
-
 import "reflect-metadata";
-import { runInNewContext } from "vm";
 class ListingMongoController {
   public itemController: ItemController = new ItemController();
   public router: Router;
