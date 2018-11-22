@@ -15,7 +15,7 @@ export class ListingService {
                 'Content-Type': 'application/json'
             })
         });
-        const link = ""
+        const link = 'http://localhost:7000/listItems'
         return this.http.get(link, options) // ...using post request
             .map((res: Response) => res.json())
             .catch((error: any) => {

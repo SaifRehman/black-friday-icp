@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { ROUTING } from './app.routing';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import {ListingService} from '../app/services/listing-schedule-service/listing.component.service'
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ],
   providers: [
+    ListingService
   ],
   bootstrap: [AppComponent]
 })
