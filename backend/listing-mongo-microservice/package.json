@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Boilerplate for a express-react app with backend in typescript",
   "main": "src/index.js",
-  "author": "Amaan Kulshreshtha",
+  "author": "Saifur rehman",
   "license": "MIT",
   "scripts": {
     "bundle": "webpack --hot",
