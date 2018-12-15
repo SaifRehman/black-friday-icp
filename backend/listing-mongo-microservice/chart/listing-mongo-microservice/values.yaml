@@ -18,7 +18,7 @@ livenessProbe:
   periodSeconds: 10
 image:
   name: listingsvc
-  imageName: "" 
+  imageName: "registry.eu-de.bluemix.net/amrotest/listing-mongo-microservice:0.0.1" 
   imagePullPolicy: Always
   ports:
     containerPort: 7000
@@ -63,7 +63,7 @@ envOfConfigmaps:
 
 hpa:
   metadata:
-    name: listingsvc-microservice-HPA
+    name: listingsvcmicroservicehpa
   spec:
     maxReplicas: 10
     minReplicas: 2

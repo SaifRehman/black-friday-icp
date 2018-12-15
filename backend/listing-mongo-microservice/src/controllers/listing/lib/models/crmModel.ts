@@ -4,10 +4,13 @@ export const ItemSchema = new Schema({
     Name:{
         type: String
     },
-    Image: {
+    Phone: {
         type: String
     },
-    Price: {
+    Lng: {
+        type: String
+    },
+    Lat: {
         type: String 
     }
 });
