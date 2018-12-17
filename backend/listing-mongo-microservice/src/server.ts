@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = Promise;
 class App {
   public express: express.Application;
-  public mongoUrl: string = 'mongodb://'+'mongo.default:27017/items';
+  public mongoUrl: string = 'mongodb://159.122.186.145:30090/new';
   constructor() {
     this.express = express();
     this.middleware();

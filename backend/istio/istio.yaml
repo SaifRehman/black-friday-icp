@@ -54,3 +54,15 @@ spec:
       interval: 1s
       baseEjectionTime: 1m
       maxEjectionPercent: 100
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: test
+spec:
+  hosts:
+  - 159.122.186.145
+  ports:
+  - number: 30824
+    name: TCP
+    protocol: TCP
