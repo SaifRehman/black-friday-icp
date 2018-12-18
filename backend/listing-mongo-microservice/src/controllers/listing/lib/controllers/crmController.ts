@@ -2,7 +2,7 @@ import * as mongoose from "mongoose";
 import { ItemSchema } from "../models/crmModel";
 import { Request, Response } from "express";
 
-const Item = mongoose.model("amro", ItemSchema);
+const Item = mongoose.model("Item", ItemSchema);
 export class ItemController {
   public addNewItem(req: Request, res: Response) {
     res.setHeader('Content-Type', 'application/json');

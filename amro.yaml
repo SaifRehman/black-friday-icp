@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: abeer # give any name
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: abeer
+      labels:
+        run: abeer
+    spec:
+      containers:
+        - name: abeer
+          image: "s4saif/listing-mongo-microservice1:0.0.1" # your registery name
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: abeer # give a service name
+  labels:
+    run: abeer
+spec:
+  type: NodePort
+  selector:
+    run: abeer
+  ports:
+    - protocol: TCP
+      name: abeer
+      port: 7000 # it shall be 8545 and no other port !!!!!
+      nodePort: 30091 # Give a port to access the application publically
